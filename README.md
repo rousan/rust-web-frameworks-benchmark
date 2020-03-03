@@ -44,7 +44,6 @@ Transfer/sec:      9.45MB
 ```
 
 Requests/sec: `112557.51`
-
 Latency: `1.77ms`
 
 

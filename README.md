@@ -110,10 +110,10 @@ Transfer/sec:    291.14KB
 
 ## Conclusion
 
-`hyper`   -> Perfect for an app which requires more controls on http. It provides `async` with `tokio.rs`.
+`hyper`     -> Perfect for an app which requires more controls on http. It provides `async` with `tokio.rs`.
 
-`gotham`  -> A high-level version of `hyper`.
+`gotham`    -> A high-level version of `hyper`.
 
-`actix-web`   -> Provides very high-level API and injects some boilerplate code as well as runtime. It provides `async` with `tokio.rs`.
+`actix-web` -> Provides very high-level API and injects some boilerplate code as well as runtime. It provides `async` with `tokio.rs`.
 
-`rocket`  -> The performance it gave I am not sure about this at all. No async.
+`rocket`    -> The performance it gave was not expected at all. No async.

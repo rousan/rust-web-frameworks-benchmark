@@ -14,7 +14,7 @@ $ wrk --latency -t4 -c200 -d8s http://127.0.0.1:8081
 
 ## Results
 
-I ran all those test on:
+I ran all those tests on:
 
 `MacBook Pro, 2.2 GHz Intel Core i7 processor with 4 cores, 16GB of RAM`
 

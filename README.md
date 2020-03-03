@@ -26,7 +26,7 @@ $ cargo build --release
 
 ### Framework 1: hyper (https://github.com/hyperium/hyper)
 
-**Requests/sec:** `112557.51` and **Latency:** `1.77ms`
+*Requests/sec:* `112557.51` and *Latency:* `1.77ms`
 
 ```
 Running 8s test @ http://127.0.0.1:8082

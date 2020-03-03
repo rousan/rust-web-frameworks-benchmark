@@ -45,11 +45,9 @@ Requests/sec: 112557.51
 Transfer/sec:      9.45MB
 ```
 
-Requests/sec: `112557.51`
-Latency: `1.77ms`
-
-
 ### Framework 2: gotham (https://github.com/gotham-rs/gotham)
+
+*Requests/sec:* `100097.73` and *Latency:* `1.98ms`
 
 ```txt
 Running 8s test @ http://127.0.0.1:8081
@@ -68,12 +66,9 @@ Requests/sec: 100097.73
 Transfer/sec:     15.85MB
 ```
 
-Requests/sec: `100097.73`
-
-Latency: `1.98ms`
-
-
 ### Framework 3: actix-web (https://github.com/actix/actix-web)
+
+*Requests/sec:* `96397.31` and *Latency:* `2.06ms`
 
 ```txt
 Running 8s test @ http://127.0.0.1:8080
@@ -92,12 +87,10 @@ Requests/sec:  96397.31
 Transfer/sec:     11.86MB
 ```
 
-Requests/sec: `96397.31`
-
-Latency: `2.06ms`
-
-
 ### Framework 4: Rocket (https://github.com/SergioBenitez/Rocket)
+
+*Requests/sec:* `2041.93` 😱 and *Latency:* `3.37ms`
+
 ```txt
 Running 8s test @ http://127.0.0.1:8000
   4 threads and 200 connections
@@ -114,11 +107,6 @@ Running 8s test @ http://127.0.0.1:8000
 Requests/sec:   2041.93
 Transfer/sec:    291.14KB
 ```
-
-Requests/sec: `2041.93` 😱
-
-Latency: `3.37ms`
-
 
 ## Conclusion
 

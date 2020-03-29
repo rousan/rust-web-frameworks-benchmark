@@ -1,4 +1,4 @@
-# Benchmarking Rust Web Frameworks: hyper vs gotham vs actix-web vs rocket
+# Benchmarking Rust Web Frameworks: hyper vs gotham vs actix-web vs warp vs rocket
 
 I was building a very performance sensitive API service using Rust and I was trying to find out which http framework I should use
 as there a lot of frameworks out there for Rust. So, I just shortlisted some of them and I ran a `hello world route` for every frameworks
@@ -139,6 +139,6 @@ Transfer/sec:    291.14KB
 
 `actix-web` -> Provides a very high-level API and injects some boilerplate code as well as runtime. It provides `async` with `tokio.rs`.
 
-'warp`      -> A very high level version of `hyper` and easy to use and it requires a few lines of codes to start a server. It provides `async` with `tokio.rs`.
+`warp`      -> A very high level version of `hyper` and easy to use and it requires a few lines of codes to start a server. It provides `async` with `tokio.rs`.
 
 `rocket`    -> The performance it gave was not expected at all. No async.s

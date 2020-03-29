@@ -141,4 +141,4 @@ Transfer/sec:    291.14KB
 
 `warp`      -> A very high level version of `hyper` and easy to use and it requires a few lines of codes to start a server. It provides `async` with `tokio.rs`.
 
-`rocket`    -> The performance it gave was not expected at all. No async.s
+`rocket`    -> The performance it gave was not expected at all. No async.

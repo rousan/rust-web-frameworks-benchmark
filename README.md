@@ -87,7 +87,30 @@ Requests/sec:  96397.31
 Transfer/sec:     11.86MB
 ```
 
-### Framework 4: Rocket (https://github.com/SergioBenitez/Rocket)
+### Framework 4: warp (https://github.com/seanmonstar/warp)
+
+*Requests/sec:* `81912.45` and *Latency:* `2.44ms`
+
+```txt
+Running 8s test @ http://localhost:3030/hello/hello
+  4 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.44ms  300.08us   8.11ms   92.88%
+    Req/Sec    20.59k     0.90k   21.66k    86.56%
+  Latency Distribution
+     50%    2.35ms
+     75%    2.45ms
+     90%    2.62ms
+     99%    3.65ms
+  655398 requests in 8.00s, 81.25MB read
+  Socket errors: connect 0, read 32, write 0, timeout 0
+Requests/sec:  81912.45
+Transfer/sec:     10.16MB
+```
+
+
+
+### Framework 5: Rocket (https://github.com/SergioBenitez/Rocket)
 
 *Requests/sec:* `2041.93` 😱 and *Latency:* `3.37ms`
 
@@ -110,10 +133,12 @@ Transfer/sec:    291.14KB
 
 ## Conclusion
 
-`hyper`     -> Perfect for an app which requires more controls on http. It provides `async` with `tokio.rs`.
+`hyper`     -> Perfect for an app which requires more controls on http and performance. It provides `async` with `tokio.rs`.
 
 `gotham`    -> A high-level version of `hyper`.
 
-`actix-web` -> Provides very high-level API and injects some boilerplate code as well as runtime. It provides `async` with `tokio.rs`.
+`actix-web` -> Provides a very high-level API and injects some boilerplate code as well as runtime. It provides `async` with `tokio.rs`.
 
-`rocket`    -> The performance it gave was not expected at all. No async.
+'warp`      -> A very high level version of `hyper` and easy to use and it requires a few lines of codes to start a server. It provides `async` with `tokio.rs`.
+
+`rocket`    -> The performance it gave was not expected at all. No async.s

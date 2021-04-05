@@ -4,10 +4,10 @@
 extern crate rocket;
 
 #[get("/")]
-fn hello() -> String {
-    format!("Hello, World!")
+fn index() -> &'static str {
+    "Hello, world!"
 }
 
 fn main() {
-    rocket::ignite().mount("/", routes![hello]).launch();
+    rocket::ignite().mount("/", routes![index]).launch();
 }

@@ -1,3 +1,4 @@
+//! A Hello World example application for working with Gotham.
 use gotham::state::State;
 
 /// Create a `Handler` which is invoked when responding to a `Request`.

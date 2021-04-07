@@ -16,7 +16,7 @@ $ wrk --latency -t4 -c200 -d8s http://127.0.0.1:8081
 
 I ran all those tests on:
 
-`MacBook Pro, 2.2 GHz Intel Core i7 processor with 4 cores, 16GB of RAM`
+`Intel Core i7 CPU @ 3.20GHz × 12, 16GB of RAM`
 
 Before run, I created a release build:
 
@@ -26,119 +26,125 @@ $ cargo build --release
 
 ### Framework 1: hyper (https://github.com/hyperium/hyper)
 
-*Requests/sec:* `112557.51` and *Latency:* `1.77ms`
+_Requests/sec:_ `520718.02` and _Latency:_ `368.31us`
 
-```
+```txt
 Running 8s test @ http://127.0.0.1:8082
   4 threads and 200 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.77ms  186.06us   4.40ms   83.89%
-    Req/Sec    28.29k     1.51k   34.67k    83.44%
+    Latency   368.31us  327.11us   8.11ms   92.48%
+    Req/Sec   131.79k     6.77k  147.18k    77.50%
   Latency Distribution
-     50%    1.74ms
-     75%    1.81ms
-     90%    1.94ms
-     99%    2.41ms
-  900610 requests in 8.00s, 75.58MB read
-  Socket errors: connect 0, read 31, write 0, timeout 0
-Requests/sec: 112557.51
-Transfer/sec:      9.45MB
+     50%  295.00us
+     75%  390.00us
+     90%  595.00us
+     99%    1.64ms
+  4196014 requests in 8.06s, 352.14MB read
+Requests/sec: 520718.02
+Transfer/sec:     43.70MB
 ```
 
-### Framework 2: gotham (https://github.com/gotham-rs/gotham)
+### Framework 2: actix-web (https://github.com/actix/actix-web)
 
-*Requests/sec:* `100097.73` and *Latency:* `1.98ms`
-
-```txt
-Running 8s test @ http://127.0.0.1:8081
-  4 threads and 200 connections
-  Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.98ms  160.96us   5.11ms   84.14%
-    Req/Sec    25.16k   566.48    26.28k    73.77%
-  Latency Distribution
-     50%    1.96ms
-     75%    2.03ms
-     90%    2.13ms
-     99%    2.56ms
-  810962 requests in 8.10s, 128.38MB read
-  Socket errors: connect 0, read 23, write 0, timeout 0
-Requests/sec: 100097.73
-Transfer/sec:     15.85MB
-```
-
-### Framework 3: actix-web (https://github.com/actix/actix-web)
-
-*Requests/sec:* `96397.31` and *Latency:* `2.06ms`
+_Requests/sec:_ `562315.64` and _Latency:_ `365.86us`
 
 ```txt
 Running 8s test @ http://127.0.0.1:8080
   4 threads and 200 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.06ms  198.35us   4.64ms   83.54%
-    Req/Sec    24.23k     1.38k   29.09k    79.06%
+    Latency   365.86us  659.57us  18.39ms   94.46%
+    Req/Sec   142.44k     7.76k  150.25k    92.19%
   Latency Distribution
-     50%    2.06ms
-     75%    2.12ms
-     90%    2.21ms
-     99%    2.81ms
-  771307 requests in 8.00s, 94.89MB read
-  Socket errors: connect 0, read 38, write 0, timeout 0
-Requests/sec:  96397.31
-Transfer/sec:     11.86MB
+     50%  238.00us
+     75%  328.00us
+     90%  451.00us
+     99%    3.35ms
+  4534091 requests in 8.06s, 557.80MB read
+Requests/sec: 562315.64
+Transfer/sec:     69.18MB
 ```
 
-### Framework 4: warp (https://github.com/seanmonstar/warp)
+### Framework 3: warp (https://github.com/seanmonstar/warp)
 
-*Requests/sec:* `81912.45` and *Latency:* `2.44ms`
+_Requests/sec:_ `506776.84` and _Latency:_ `393.21us`
 
 ```txt
-Running 8s test @ http://localhost:3030/hello/hello
+Running 8s test @ http://127.0.0.1:3030
   4 threads and 200 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.44ms  300.08us   8.11ms   92.88%
-    Req/Sec    20.59k     0.90k   21.66k    86.56%
+    Latency   393.21us  487.15us  21.55ms   95.16%
+    Req/Sec   128.68k     7.57k  146.42k    79.06%
   Latency Distribution
-     50%    2.35ms
-     75%    2.45ms
-     90%    2.62ms
-     99%    3.65ms
-  655398 requests in 8.00s, 81.25MB read
-  Socket errors: connect 0, read 32, write 0, timeout 0
-Requests/sec:  81912.45
-Transfer/sec:     10.16MB
+     50%  305.00us
+     75%  410.00us
+     90%  620.00us
+     99%    1.80ms
+  4098580 requests in 8.09s, 320.51MB read
+  Non-2xx or 3xx responses: 4098580
+Requests/sec: 506776.84
+Transfer/sec:     39.63MB
 ```
 
+### Framework 4: gotham (https://github.com/gotham-rs/gotham)
 
+_Requests/sec:_ `300483.70` and _Latency:_ `677.14us`
+
+```txt
+Running 8s test @ http://127.0.0.1:8081
+  4 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   677.14us  513.16us  15.78ms   87.00%
+    Req/Sec    76.36k     6.20k   88.57k    74.38%
+  Latency Distribution
+     50%  554.00us
+     75%  816.00us
+     90%    1.19ms
+     99%    2.66ms
+  2431445 requests in 8.09s, 384.92MB read
+Requests/sec: 300483.70
+Transfer/sec:     47.57MB
+```
 
 ### Framework 5: Rocket (https://github.com/SergioBenitez/Rocket)
 
-*Requests/sec:* `2041.93` 😱 and *Latency:* `3.37ms`
+_Requests/sec:_ `115231.95` and _Latency:_ `412.75us`
 
 ```txt
 Running 8s test @ http://127.0.0.1:8000
   4 threads and 200 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     3.37ms  428.85us   5.77ms   80.13%
-    Req/Sec     4.61k     1.22k    5.51k    88.89%
+    Latency   412.75us    1.35ms 204.10ms   99.83%
+    Req/Sec    29.20k     1.60k   31.79k    85.94%
   Latency Distribution
-     50%    3.32ms
-     75%    3.57ms
-     90%    3.89ms
-     99%    4.67ms
-  16519 requests in 8.09s, 2.30MB read
-  Socket errors: connect 0, read 16613, write 0, timeout 0
-Requests/sec:   2041.93
-Transfer/sec:    291.14KB
+     50%  312.00us
+     75%  551.00us
+     90%  737.00us
+     99%    0.99ms
+  929792 requests in 8.07s, 129.46MB read
+  Socket errors: connect 0, read 929766, write 0, timeout 0
+Requests/sec: 115231.95
+Transfer/sec:     16.04MB
 ```
+
+#### Caveat
+
+In order to run a fair comparison a suitable environment variable should be set
+while running, `ROCKET_ENV=prod ./rocket`.
+Indeed, by default is set to `dev`, and it is spending a lot of time logging
+everything on the console.
 
 ## Conclusion
 
-`hyper`     -> Perfect for an app which requires more controls on http and performance. It provides `async` with `tokio.rs`.
+`hyper` -> Perfect for an app which requires more controls on http and
+performance. It provides `async` with `tokio.rs`.
 
-`gotham`    -> A high-level version of `hyper`.
+`gotham` -> A high-level version of `hyper`.
 
-`actix-web` -> Provides a very high-level API and injects some boilerplate code as well as runtime. It provides `async` with `tokio.rs`.
+`actix-web` -> Provides a very high-level API and injects some boilerplate code
+as well as runtime. It provides `async` with `tokio.rs`.
 
-`warp`      -> A very high level version of `hyper` and easy to use and it requires a few lines of codes to start a server. It provides `async` with `tokio.rs`.
+`warp` -> A very high level version of `hyper` and easy to use and it requires
+a few lines of codes to start a server. It provides `async` with `tokio.rs`.
 
-`rocket`    -> The performance it gave was not expected at all. No async.
+`rocket` -> High level, actively developed and quite used. Nevertheless it has
+not the same performances as the others.

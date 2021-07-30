@@ -1,0 +1,8 @@
+[package]
+name = "trillium"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+trillium = "0.1.5"
+trillium-smol = "0.1.4"

@@ -2,7 +2,7 @@
 name = "gotham"
 version = "0.1.0"
 authors = ["Rousan Ali <rousanali786@gmail.com>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
-gotham = "0.6.0"
+gotham = "0.7.1"

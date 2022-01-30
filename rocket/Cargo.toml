@@ -2,7 +2,7 @@
 name = "rocket"
 version = "0.1.0"
 authors = ["Rousan Ali <rousanali786@gmail.com>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
-rocket = "0.4.7"
+rocket = "0.5.0-rc.1"
